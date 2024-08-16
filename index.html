@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Custom CSS -->
+</head>
+<body class="bg-gray-100 font-['Roboto']">
+    <!-- Navbar -->
+    <nav class="w-full bg-cyan-700 p-4 shadow-lg fixed top-0 left-0 z-10 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/task.png" alt="Logo" class="w-8 h-8">
+            <div class="text-white text-xl font-bold">Task Manager</div>
+        </div>
+        <ul class="flex space-x-8">
+            <li><a href="#" onclick="showSection('listMember')" class="text-white font-semibold hover:text-cyan-300">List Member</a></li>
+            <li><a href="#" onclick="showSection('listTask')" class="text-white font-semibold hover:text-cyan-300">List Task</a></li>
+            <li><a href="#" onclick="showSection('addMember')" class="text-white font-semibold hover:text-cyan-300">Add Member</a></li>
+            <li><a href="#" onclick="showSection('addTask')" class="text-white font-semibold hover:text-cyan-300">Add Task</a></li>
+        </ul>
+    </nav>
+
+    <!-- Container -->
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-3xl mx-auto mt-24 space-y-8">
+        <!-- List Member Section -->
+        <div id="listMember" class="section">
+            <h1 class="text-2xl font-bold text-gray-700 text-center mb-4">List of Members</h1>
+            <div class="p-4 bg-gray-50 rounded-md shadow-inner">
+                <table class="min-w-full bg-white border border-gray-200">
+                    <thead>
+                        <tr class="bg-cyan-600 text-white">
+                            <th class="py-2 px-4 border-b">No</th>
+                            <th class="py-2 px-4 border-b">Member Name</th>
+                            <th class="py-2 px-4 border-b">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="memberList"></tbody>
+                </table>
+            </div>
+        </div>
+        <hr class="border-t border-gray-300 my-6">
+        <!-- List Task Section -->
+        <div id="listTask" class="section">
+            <h1 class="text-2xl font-bold text-gray-700 text-center mb-4">List of Tasks</h1>
+            <select id="memberSelectListTask" onchange="displayTasks()" class="w-full p-3 mb-4 border border-gray-300 rounded-md">
+                <option value="">Select Member</option>
+            </select>
+            <div class="p-4 bg-gray-50 rounded-md shadow-inner">
+                <table class="min-w-full bg-white border border-gray-200">
+                    <thead>
+                        <tr class="bg-cyan-600 text-white">
+                            <th class="py-2 px-4 border-b">No</th>
+                            <th class="py-2 px-4 border-b">Task</th>
+                            <th class="py-2 px-4 border-b">Due Date</th>
+                            <th class="py-2 px-4 border-b">Status</th>
+                            <th class="py-2 px-4 border-b">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="taskList"></tbody>
+                </table>
+            </div>
+        </div>
+        <hr class="border-t border-gray-300 my-6">
+        <!-- Add Member Section -->
+        <div id="addMember" class="section">
+            <h1 class="text-2xl font-bold text-gray-700 text-center mb-4">Add Member</h1>
+            <div class="form-group">
+                <input type="text" id="memberInput" placeholder="Add Member" class="w-full p-3 mb-4 border border-gray-300 rounded-md">
+                <button onclick="addMember()" class="w-full bg-cyan-600 text-white py-2 rounded-md hover:bg-cyan-500 transition flex items-center justify-center">
+                    <img src="https://img.icons8.com/ios-filled/20/ffffff/plus.png" alt="Add" class="mr-2">
+                    Add Member
+                </button>
+            </div>
+        </div>
+        <hr class="border-t border-gray-300 my-6">
+        <!-- Add Task Section -->
+        <div id="addTask" class="section">
+            <h1 class="text-2xl font-bold text-gray-700 text-center mb-4">Add Task</h1>
+            <div class="form-group">
+                <select id="memberSelectAddTask" class="w-full p-3 mb-4 border border-gray-300 rounded-md">
+                    <option value="">Select Member</option>
+                </select>
+                <input type="text" id="taskInput" placeholder="Add Task" class="w-full p-3 mb-4 border border-gray-300 rounded-md">
+                <input type="date" id="dueDateInput" class="w-full p-3 mb-4 border border-gray-300 rounded-md">
+                <button onclick="addTask()" class="w-full bg-cyan-600 text-white py-2 rounded-md hover:bg-cyan-500 transition flex items-center justify-center">
+                    <img src="https://img.icons8.com/ios-filled/20/ffffff/plus.png" alt="Add" class="mr-2">
+                    Add Task
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full bg-cyan-700 p-4 text-white text-center mt-12">
+        <p>&copy; 2024 Task Manager. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

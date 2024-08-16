@@ -1,0 +1,114 @@
+/* styles.css */
+body {
+    background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/memphis-mini.png');
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+}
+
+.bg-cyan-700 {
+    background-color: #006d77; /* Dark cyan */
+}
+
+.bg-cyan-600 {
+    background-color: #0096c7; /* Medium cyan */
+}
+
+.bg-cyan-500 {
+    background-color: #00b4d8; /* Light cyan */
+}
+
+.text-cyan-300 {
+    color: #a0e4f3; /* Pale cyan */
+}
+
+/* Navbar hover effects */
+nav ul li a {
+    position: relative;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #a0e4f3;
+    border-bottom: 2px solid white;
+}
+
+/* Logo animation */
+.navbar-logo {
+    animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+/* Button hover effects */
+button {
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    background-color: #00a3cc;
+    transform: scale(1.05);
+    box-shadow: 0 4px 14px rgba(0, 163, 204, 0.4);
+}
+
+button:active {
+    animation: loading 1s infinite;
+}
+
+@keyframes loading {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Section animations */
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section.active {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animasi Scale dan Rotate pada Checkbox */
+@keyframes scaleRotate {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(20deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+input[type="checkbox"]:checked + span {
+    color: #38a169; /* Green color for completed */
+    font-weight: bold;
+    animation: scaleRotate 0.5s ease-in-out;
+}
+
+input[type="checkbox"] + span {
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+/* Optional: Tambah sedikit animasi pada checkbox */
+input[type="checkbox"]:checked {
+    animation: scaleRotate 0.5s ease-in-out;
+}
