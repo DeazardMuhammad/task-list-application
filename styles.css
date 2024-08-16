@@ -1,4 +1,3 @@
-/* styles.css */
 body {
     background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/memphis-mini.png');
     background-size: cover;
@@ -6,11 +5,11 @@ body {
 }
 
 .bg-cyan-700 {
-    background-color: #006d77; /* Dark cyan */
+    background-color: #006d77; 
 }
 
 .bg-cyan-600 {
-    background-color: #0096c7; /* Medium cyan */
+    background-color: #0096c7;
 }
 
 .bg-cyan-500 {
@@ -18,10 +17,9 @@ body {
 }
 
 .text-cyan-300 {
-    color: #a0e4f3; /* Pale cyan */
+    color: #a0e4f3; 
 }
 
-/* Navbar hover effects */
 nav ul li a {
     position: relative;
     padding-bottom: 5px;
@@ -33,7 +31,6 @@ nav ul li a:hover {
     border-bottom: 2px solid white;
 }
 
-/* Logo animation */
 .navbar-logo {
     animation: scaleIn 0.5s ease-out;
 }
@@ -43,7 +40,6 @@ nav ul li a:hover {
     to { transform: scale(1); }
 }
 
-/* Button hover effects */
 button {
     padding: 12px;
     border-radius: 8px;
@@ -67,7 +63,6 @@ button:active {
     100% { transform: scale(1); }
 }
 
-/* Section animations */
 .section {
     opacity: 0;
     transform: translateY(20px);
@@ -85,7 +80,6 @@ button:active {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Animasi Scale dan Rotate pada Checkbox */
 @keyframes scaleRotate {
     0% {
         transform: scale(1) rotate(0deg);
@@ -99,7 +93,7 @@ button:active {
 }
 
 input[type="checkbox"]:checked + span {
-    color: #38a169; /* Green color for completed */
+    color: #38a169; 
     font-weight: bold;
     animation: scaleRotate 0.5s ease-in-out;
 }
@@ -108,7 +102,6 @@ input[type="checkbox"] + span {
     transition: color 0.3s ease, font-weight 0.3s ease;
 }
 
-/* Optional: Tambah sedikit animasi pada checkbox */
 input[type="checkbox"]:checked {
     animation: scaleRotate 0.5s ease-in-out;
 }
